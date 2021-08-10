@@ -1,0 +1,552 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-text-color: #ffc209;
+    --main-font: 'Rubik', sans-serif;
+    --main-color: #11141b;
+    --main-background-color: #0c0f16;
+    --secondary-color: #f55422;
+}
+
+/* html {
+    font-family: var(--main-font);
+    background-color: var(--main-background-color);
+} */
+
+li {
+    list-style: none;;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* .container__main {
+    max-width: 1169px;
+    margin: auto;
+} */
+
+.container{
+    max-width: 1169px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    background-image: url(../../image/banner4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+/*Tạo background đen mờ*/
+.bg__image {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.3;
+}
+/* Top-title-menu */
+.top {
+    position: absolute;
+    width: 100%;
+    z-index: 1;/**Cho thanh top--menu hiện lên trên*/
+}
+.header__top {
+    justify-content: space-between;
+    padding: 12px 0;
+    align-items: center;
+}
+
+.header__top  p {
+    font-family: var(--main-font);
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+.header__top  p  span {
+    color: var(--main-text-color);
+}
+
+.header__top  ul {
+    display: flex;
+}
+/* Hover menu có thanh ngang phía dưới */
+.header__top  ul  li{
+    margin-left: 22px;
+    position: relative;
+}
+
+.header__top ul li::after {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: -2px;
+    height: 3px;
+    width: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-text-color);
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.header__top ul li:hover::after {
+    width: 100%;
+}
+
+.header__top ul li a{
+    font-family: var(--main-font);
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Title */
+.header__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    min-width: 380px;
+    text-align: center;
+}
+
+.header__text h3 {
+    font-family: var(--main-font);
+    color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+.header__text h1 {
+    font-family: var(--main-font);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+/* Social-list */
+.header__text ul {
+    display: flex;
+    justify-content: center;
+}
+
+.header__text  ul  li {
+    margin-right: 16px;
+}
+
+.header__text ul li a>i:hover {
+    color: var(--main-text-color);
+}
+
+.header__text ul li a i {
+    color:  white;
+}
+
+/* Button */
+.header__text button {
+    font-family: var(--main-font);
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    margin: 20px 12px;
+    background-color: var(--secondary-color);
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    border: 2px solid var(--secondary-color);
+    border-radius: 30px;
+    background: var(--secondary-color);
+    transition: all 500ms ease;
+
+    cursor: pointer;
+}
+
+.header__text button:hover {
+    background-color: transparent;
+    color: white;
+}
+
+
+/* Menu ẩn, hiện */
+/* Dấu X */
+.header__top ul i {
+    font-size: 32px;
+    color: var(--main-text-color);
+    color: white;
+    margin: 12px 0 0 12px;
+    margin-bottom: 150px;
+    cursor: pointer;
+    display: none;/*Bình thường nó sẽ mất */
+}
+/* Dấu menu */
+.header__top> i {
+    font-size: 32px;
+    color: var(--main-text-color);
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 575px) {
+    .header__top ul {
+        position: fixed;
+        width: 200px;
+        height: 100vh;
+        background-color: var(--main-text-color);
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        transform: translateX(100%);/* Nó ẩn qua bên phải*/
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+    .header__top ul li {
+        margin-bottom: 20px;
+        margin-left: 50px;
+    }
+
+    .header__top>i {
+        display: block;/*Hiện dấu menu*/
+    }
+    
+    .header__top ul>i {
+        display: block;/*Hiện dấu X*/
+    }
+    .header__top {
+        padding: 0 12px;
+    }
+}
+
+/* About Me */
+.about {
+    background-color: var(--main-color);
+    width: 100%;
+    height: 100vh;
+}
+
+.about__content > h2 {
+    font-family: var(--main-font);
+    padding-top: 100px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.about__description {
+    display: flex;
+    margin-top: 100px;
+}
+
+.about__description-img {
+    width: 50%;
+    border: 16px solid white;
+    border-radius: 10px;
+}
+
+.about__description-img img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--main-color);
+}
+
+.about__description-cv {
+    margin-left: 40px;
+    width: 50%;
+}
+
+.about__description-cv h3  {
+    font-family: var(--main-font);
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.about__description-cv > h3 > span {
+    color: var(--main-text-color);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.about__description-cv h5 {
+    font-family: var(--main-font);
+    padding: 20px 0;
+    color: #7990c7;
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.about__description-cv p {
+    font-family: var(--main-font);
+    color: white;
+    text-align: left;
+}
+
+.about__description-cv button {
+    width: 180px;
+    height: 44px;
+    color: #7990c7;
+    font-size: 14px;
+    font-family: var(--main-font);
+
+    background-color: var(--main-color);
+    margin-top: 16px;
+    outline: none;
+    border: 1px solid #7990c7;
+    transition: all 0.5s ease;
+
+    cursor: pointer;
+}
+
+
+.about__description-cv button:hover {
+    background-color: #7990c7;
+    color: white;
+}
+
+/* Course */
+.course {
+    padding: 50px 0;
+    background-color: var(--main-background-color);
+}
+
+.course h1 {
+    font-family: var(--main-font);
+    color: white;
+    padding-top: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.course-items {
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.course-item {
+    width: 30%;
+    text-align: center;
+    background-color: #151921;
+    padding: 20px 30px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.course-item:hover {
+    cursor: pointer;
+}
+
+.course-item-icon1 i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.course-item-icon2 i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.course-item-icon3 i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.course-item h2 {
+    font-family: var(--main-font);
+    margin-bottom: 12px;
+    color: white;
+}
+
+.course-item:hover {
+    transform: translateY(-6%);
+}
+
+.course-item p {
+    font-family: var(--main-font);
+    color: #a6a7a8;
+    text-align: center;
+}
+
+.course-item {
+    position: relative;
+}
+
+.course-item::after {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: -2px;
+    height: 1px;
+    width: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.course-item:hover::after {
+    width: 100%;
+}
+
+/* Work Education */
+.education {
+    background-color: var(--main-background-color);
+}
+
+.education h1 {
+    font-family: var(--main-font);
+    color: white;
+    padding-top: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.education-items {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.education-items-list {
+    margin: 0 16px;
+    border-left: 1px solid var(--secondary-color);
+}
+
+.education-item {
+    width: 100%;
+    height: 220px;
+    text-align: left;
+    background-color: #151921;
+    padding: 18px 30px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.education-item h2 {
+    font-family: var(--main-font);
+    margin: 12px 0;
+    color: white;
+}
+
+.education-item span {
+    color: white;
+    background-color: var(--secondary-color);
+    padding: 4px 6px;
+    margin: 6px 0;
+}
+.education-item p {
+    margin: 12px 0;
+    font-family: var(--main-font);
+    color: #a6a7a8;
+    text-align: left;
+}
+
+/* Skills I'm learning */
+/* .skills {
+    background-color: var(--main-color);
+    width: 100%;
+    height: 100vh;
+}
+
+.skills__content > h2 {
+    font-family: var(--main-font);
+    padding-top: 100px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.skills__description {
+    display: flex;
+    margin-top: 100px;
+}
+
+.skills__description-img {
+    width: 50%;
+    border: 16px solid white;
+    border-radius: 10px;
+}
+
+.skills__description-img img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--main-color);
+}
+
+.skills__description-cv {
+    margin-left: 40px;
+    width: 50%;
+}
+
+.skills__description-cv h3  {
+    font-family: var(--main-font);
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.skills__description-cv > h3 > span {
+    color: var(--main-text-color);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.skills__description-cv h5 {
+    font-family: var(--main-font);
+    padding: 20px 0;
+    color: #7990c7;
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.skills__description-cv p {
+    font-family: var(--main-font);
+    color: white;
+    text-align: left;
+}
+
+.skills__description-cv button {
+    width: 180px;
+    height: 44px;
+    color: #7990c7;
+    font-size: 14px;
+    font-family: var(--main-font);
+
+    background-color: var(--main-color);
+    margin-top: 16px;
+    outline: none;
+    border: 1px solid #7990c7;
+    transition: all 0.5s ease;
+
+    cursor: pointer;
+}
+
+
+.skills__description-cv button:hover {
+    background-color: #7990c7;
+    color: white;
+} */

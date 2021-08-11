@@ -305,7 +305,7 @@ header {
     .education-items-list > .education-item {
         padding: 0 4px;
         width: 99%;
-        height: 400px;
+        height: 430px;
         border-left: 1px solid var(--secondary-color);
     }
 

@@ -261,9 +261,13 @@ header {
         display: contents;
     }
 
-    .about__description-cv h3, h5, a {
+    .about__description-cv h3, a {
         text-align: center;
-        padding: 0 12px;
+        padding: 0 16px;
+    }
+    .about__description-cv h5 {
+        text-align: center;
+        padding: 0 16px;
     }
 
     .about__description-cv p {
@@ -288,7 +292,7 @@ header {
 
     .education {
         width: 100%;
-        height: 190vh;
+        height: 145vh;
     }
 
     .education-items {

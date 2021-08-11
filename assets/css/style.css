@@ -318,17 +318,18 @@ header {
     }
 
     .education-items {
-        width: 100%;
+        flex-direction: column;
     }
     .education-items-list {
         height: 0;
+        display: inline-table;
+        padding: 0px 4px;
     }
 
     .education-items-list > .education-item {
         padding: 0 4px;
         width: 99%;
-        height: 470px;
-        border-left: 1px solid var(--secondary-color);
+        height: 220px;
     }
 
     .education-item {

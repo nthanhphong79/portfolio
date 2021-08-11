@@ -203,8 +203,8 @@ header {
     cursor: pointer;
     display: none;
 }
-/* I Pad */
-@media (max-width: 768px) {
+
+@media (max-width: 575px) {
     .header__top ul {
         position: fixed;
         width: 200px;
@@ -236,7 +236,45 @@ header {
     .header__text {
         width: 100%;
     }
+    /* About Me */
+    .about {
+
+    }
+
+    .about__content{
+
+    }
+
+    .about__description{
+        flex-direction: column;
+    }
+
+    .about__description-img{
+        display: none;
+    }
+
+    .about__description-img img {
+
+    }
+
+    .about__description-cv {
+        display: contents;
+    }
+
+    .about__description-cv h3, h5, a {
+        text-align: center;
+        padding: 0 12px;
+    }
+
+    .about__description-cv p {
+        padding: 0 29px;
+    }
+    
+
     /* Course */
+    .course {
+
+    }
 
     .course-items {
         flex-direction: column;
@@ -250,16 +288,21 @@ header {
 
     .education {
         width: 100%;
-        height: 100vh;
+        height: 190vh;
     }
 
     .education-items {
         width: 100%;
-        height: 700px;
+    }
+    .education-items-list {
+        height: 0;
     }
 
-    .education-items-list {
-
+    .education-items-list > .education-item {
+        padding: 0 4px;
+        width: 99%;
+        height: 363px;
+        border-left: 1px solid var(--secondary-color);
     }
 
     .education-item {

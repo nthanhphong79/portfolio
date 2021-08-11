@@ -203,8 +203,8 @@ header {
     cursor: pointer;
     display: none;
 }
-
-@media (max-width: 575px) {
+/* I Pad */
+@media (max-width: 768px) {
     .header__top ul {
         position: fixed;
         width: 200px;
@@ -218,7 +218,7 @@ header {
         transition: all 0.5s ease;
     }
     .header__top ul li {
-        margin-bottom: 20px;
+        margin-bottom: 28px;
         margin-left: 50px;
     }
 
@@ -232,6 +232,42 @@ header {
     .header__top {
         padding: 0 12px;
     }
+
+    .header__text {
+        width: 100%;
+    }
+    /* Course */
+
+    .course-items {
+        flex-direction: column;
+    }
+
+    .course-items > .course-item {
+        width: 100%;
+        height: 300px;
+        margin: 18px 0;
+    }
+
+    .education {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .education-items {
+        width: 100%;
+        height: 700px;
+    }
+
+    .education-items-list {
+
+    }
+
+    .education-item {
+
+    }
+
+
+
 }
 
 /* About Me */
@@ -324,7 +360,6 @@ header {
 
 /* Course */
 .course {
-    padding: 50px 0;
     background-color: var(--main-background-color);
 }
 
